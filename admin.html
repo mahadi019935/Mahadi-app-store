@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Upload - Mahadi App Store</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .form-box {
+      margin-top: 50px;
+      background: #111;
+      border: 2px solid #00ff00;
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 15px #00ff00;
+    }
+    input, textarea {
+      display: block;
+      width: 90%;
+      margin: 10px auto;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+    }
+    .btn {
+      background: #00ff00;
+      color: black;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ff00;
+    }
+    #uploadForm {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔐 Admin Upload</h1>
+  
+  <div class="form-box">
+    <div id="loginForm">
+      <p>পাসওয়ার্ড দিন</p>
+      <input type="password" id="adminPass" placeholder="Password">
+      <button class="btn" onclick="checkPassword()">লগইন</button>
+    </div>
+
+    <form id="uploadForm">
+      <input type="text" placeholder="App Name" required>
+      <textarea placeholder="App Description" required></textarea>
+      <input type="url" placeholder="APK Download Link" required>
+      <button type="submit" class="btn">✅ Upload App</button>
+    </form>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const pass = document.getElementById('adminPass').value;
+      if (pass === "01993554407") {
+        document.getElementById('loginForm').style.display = "none";
+        document.getElementById('uploadForm').style.display = "block";
+      } else {
+        alert("❌ ভুল পাসওয়ার্ড!");
+      }
+    }
+  </script>
+</body>
+</html>
